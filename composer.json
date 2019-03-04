@@ -1,0 +1,24 @@
+{
+    "name": "bradstw/five9-client",
+    "description": "Five9 Helper Library to interact with Five9 web config API.",
+    "keywords": ["template", "composer", "package", "five9"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brad Stewart",
+            "email": "brad@xactmedia.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=5.4"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "5.2.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "Bradstw\\Five9\\": "src/"
+        }
+    }
+}
