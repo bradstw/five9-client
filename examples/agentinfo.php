@@ -2,8 +2,8 @@
 require_once('../vendor/autoload.php');
 
 $credentials = [
-    'login' => "am2_agentmanager",
-    'password' => "nXlcmwS5",
+    'login' => "USERNAME",
+    'password' => "PASSWORD",
 ];
 
 $connect = new \Bradstw\Five9\Five9Client($credentials);
