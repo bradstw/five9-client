@@ -14,6 +14,7 @@ class Five9Client
      * @var 
      */
     protected $client;
+    
     /**
      * Five9 API credentials 
      * @var array
@@ -21,10 +22,8 @@ class Five9Client
     protected $credentials;
     
     /**
-     * Create a new API client using the provided credentials.
+     * Constructor
      * @param array $credentials is an array containing values for login & password
-     *
-     * @return $this
      */
     public function __construct($credentials = [])
     {
@@ -36,6 +35,9 @@ class Five9Client
         }
     }
     
+    /**
+   * @return \SoapClient
+   */
     public function getClient()
     {
         return $this->client;

@@ -9,9 +9,22 @@ use Bradstw\Five9\Five9Client;
 */
 class User
 {
+    /**
+     * API Client Connection
+     * @var 
+     */
     protected $client;
+    
+    /**
+     * Five9 API credentials 
+     * @var array
+     */
     protected $credentials;
     
+    /**
+     * Constructor
+     * @param array $credentials is an array containing values for login & password
+     */
     public function __construct($credentials)
     {
         $connect = new Five9Client($credentials);

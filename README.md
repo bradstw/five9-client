@@ -14,8 +14,16 @@ Features
 
 Current Supported Methods
 -------------------------
-##### User
+#### User
 * createUser
 * deleteUser
 * getUsersGeneralinfo
 * getAllUsersInfo
+
+#### Groups
+* allAgentGroups
+* getAgentGroup
+* searchAgentGroups
+* deleteAgentGroup
+* createAgentGroup
+* modifyAgentGroup (rename, addAgents, removeAgents)
