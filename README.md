@@ -21,7 +21,9 @@ Current Supported Methods
 * getAllUsersInfo
 
 #### Groups
-* allGroups
+* allAgentGroups
 * getAgentGroup
-* searchGroups
+* searchAgentGroups
 * deleteAgentGroup
+* createAgentGroup
+* modifyAgentGroup (rename, addAgents, removeAgents)
