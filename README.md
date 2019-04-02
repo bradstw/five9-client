@@ -27,3 +27,11 @@ Current Supported Methods
 * deleteAgentGroup
 * createAgentGroup
 * modifyAgentGroup (rename, addAgents, removeAgents)
+
+#### Report
+* runReport
+
+#### Campaign
+* getAllDNIS
+* getCampaignDNISList
+* getOpenDNIS
