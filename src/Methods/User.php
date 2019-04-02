@@ -2,6 +2,7 @@
 namespace Bradstw\Five9\Methods;
 
 use Bradstw\Five9\Five9Client;
+use Bradstw\Five9\Defaults;
 
 /**
 *  Five9 User Management
@@ -11,12 +12,12 @@ class User
 {
     /**
      * API Client Connection
-     * @var 
+     * @var
      */
     protected $client;
     
     /**
-     * Five9 API credentials 
+     * Five9 API credentials
      * @var array
      */
     protected $credentials;
@@ -80,9 +81,14 @@ class User
     {
         $method = 'createUser';
         
-        # DEFAULTS for new user creation
-        $change_pass = !isset($new_user['can_change_password']) ? true : $new_user['can_change_password'];
-        $must_change = !isset($new_user['must_change_password']) ? true : $new_user['must_change_password'];
+        # DEFAULTS for new user creation if not specified
+        $change_pass = !isset($new_user['can_change_password']) ? Defaults::$user_change_password : $new_user['can_change_password'];
+        $must_change = !isset($new_user['must_change_password']) ? Defaults::$user_must_change_password : $new_user['must_change_password'];
+        $active = !isset($new_user['active']) ? Defaults::$user_active : $new_user['active'];
+        $recorded = !isset($new_user['alwaysRecorded']) ? Defaults::$user_role['alwaysRecorded'] : $new_user['alwaysRecorded'];
+        $email_vm = !isset($new_user['sendEmailOnVm']) ? Defaults::$user_role['sendEmailOnVm'] : $new_user['sendEmailOnVm'];
+        $attch_vm = !isset($new_user['attachVmToEmail']) ? Defaults::$user_role['attachVmToEmail'] : $new_user['attachVmToEmail'];
+        
         
         $user_general_info = [
             'firstName' => $new_user['first_name'],
@@ -93,14 +99,14 @@ class User
             'userProfileName' => $new_user['user_profile'],
             'canChangePassword' => $change_pass,
             'mustChangePassword' => $must_change,
-            'active' => true,
+            'active' => $active,
         ];
         
         # DEFAULTS for agent role settings
         $agent_role_params = [
-            'alwaysRecorded' => true,
-            'sendEmailOnVm' => false,
-            'attachVmToEmail' => false,
+            'alwaysRecorded' => $recorded,
+            'sendEmailOnVm' => $email_vm,
+            'attachVmToEmail' => $attch_vm,
         ];
         
         $new_user_build = [
