@@ -10,7 +10,7 @@ Features
 --------
 * PSR-4 autoloading compliant structure
 * Unit-Testing with PHPUnit
-* Comprehensive Guides and tutorial
+* Comprehensive Guides and tutorial - Coming Soon
 
 Current Supported Methods
 -------------------------
