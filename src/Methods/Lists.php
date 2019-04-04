@@ -59,4 +59,27 @@ class Lists implements MethodInterface
             return $error_message;
         }
     }
+    
+    /**
+     * Delete a list
+     * @param string list name
+     *
+     * @return string success of error message
+     */
+    public function deleteList($name)
+    {
+        $method = 'deleteList';
+        $list = [
+            'listName' => $name
+        ];
+        
+        try {
+            $result = $this->client->$method($list);
+            $response = 'success';
+            return $response;
+        } catch (\Exception $e) {
+            $error_message = $e->getMessage();
+            return $error_message;
+        }
+    }
 }
