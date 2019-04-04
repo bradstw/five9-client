@@ -1,4 +1,5 @@
 <?php
+
 namespace Bradstw\Five9;
 
 /**
@@ -11,12 +12,12 @@ class Five9Client
     const WSDL = "https://api.five9.com/wsadmin/AdminWebService?wsdl";
     /**
      * API Client Connection
-     * @var 
+     * @var
      */
     protected $client;
     
     /**
-     * Five9 API credentials 
+     * Five9 API credentials
      * @var array
      */
     protected $credentials;

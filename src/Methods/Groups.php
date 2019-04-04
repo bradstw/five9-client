@@ -1,31 +1,37 @@
 <?php
+
 namespace Bradstw\Five9\Methods;
 
 use Bradstw\Five9\Five9Client;
 
-/**
-*  Five9 Group Management
-*  @author Brad Stewart - https://github.com/bradstw
-*/
-class Groups
+class Groups implements MethodInterface
 {
     /**
      * API Client Connection
-     * @var 
+     * @var
      */
     protected $client;
     
     /**
-     * Five9 API credentials 
+     * Five9 API credentials
      * @var array
      */
     protected $credentials;
     
-     /**
-      * Constructor
-      * @param array $credentials is an array containing values for login & password
-      */
+    /**
+     * Constructor
+     * @param array $credentials is an array containing values for login & password
+    */
     public function __construct($credentials)
+    {
+        $this->setClient($credentials);
+    }
+    
+    /**
+     * setClient required for all api interactions
+     * @param array $credentials is an array containing values for login & password
+     */
+    public function setClient($credentials)
     {
         $connect = new Five9Client($credentials);
         $this->client = $connect->getClient();
@@ -73,9 +79,9 @@ class Groups
     
     /**
     * Search for groups
-    * @param string regular expression name search is (R.*) 
+    * @param string regular expression name search is (R.*)
     *
-    * @return array matched groups from search 
+    * @return array matched groups from search
     */
     public function searchAgentGroups($group_name)
     {

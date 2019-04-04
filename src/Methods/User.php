@@ -1,14 +1,11 @@
 <?php
+
 namespace Bradstw\Five9\Methods;
 
 use Bradstw\Five9\Five9Client;
 use Bradstw\Five9\Defaults;
 
-/**
-*  Five9 User Management
-*  @author Brad Stewart - https://github.com/bradstw
-*/
-class User
+class User implements MethodInterface
 {
     /**
      * API Client Connection
@@ -25,12 +22,22 @@ class User
     /**
      * Constructor
      * @param array $credentials is an array containing values for login & password
-     */
+    */
     public function __construct($credentials)
+    {
+        $this->setClient($credentials);
+    }
+    
+    /**
+     * setClient function required for all api interactions
+     * @param array $credentials is an array containing values for login & password
+     */
+    public function setClient($credentials)
     {
         $connect = new Five9Client($credentials);
         $this->client = $connect->getClient();
     }
+     
     /**
      * Get a specified users general information
      * @param string $user_name a valid user name
