@@ -1,9 +1,10 @@
 <?php
+
 namespace Bradstw\Five9\Methods;
 
 use Bradstw\Five9\Five9Client;
 
-class Report
+class Report implements MethodInterface
 {
     /**
      * API Client Connection
@@ -22,6 +23,15 @@ class Report
      * @param array $credentials is an array containing values for login & password
      */
     public function __construct($credentials)
+    {
+        $this->setClient($credentials);
+    }
+    
+    /**
+     * setClient function required for all api interactions
+     * @param array $credentials is an array containing values for login & password
+     */
+    public function setClient($credentials)
     {
         $connect = new Five9Client($credentials);
         $this->client = $connect->getClient();

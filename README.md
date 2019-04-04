@@ -35,3 +35,7 @@ Current Supported Methods
 * getAllDNIS
 * getCampaignDNISList
 * getOpenDNIS
+
+#### Lists
+* createList
+* deleteList
