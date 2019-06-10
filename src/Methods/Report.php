@@ -78,7 +78,7 @@ class Report implements MethodInterface
         # Build readable array to return
         $return = [];
         $headers = $report->return->header->values->data;
-        if (isset($report->return->records)) {
+        if (isset($report->return->records) or !empty($report->return->records)) {
             foreach ($report->return->records as $record_id => $record) {
                 $row = $record->values->data;
                 $returnRow = [];

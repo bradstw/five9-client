@@ -3,6 +3,7 @@
 namespace Bradstw\Five9\Methods;
 
 use Bradstw\Five9\Five9Client;
+use Bradstw\Five9\Defaults;
 
 class Lists implements MethodInterface
 {
