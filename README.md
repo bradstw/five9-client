@@ -4,7 +4,7 @@ Five9 Client Library for PHP
 
 Installation
 ------------
-composer require bradstw/five9-client
+composer require bradstw/five9-client:dev-master
 
 
 Features
