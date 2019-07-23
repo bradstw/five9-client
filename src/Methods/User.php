@@ -158,4 +158,31 @@ class User implements MethodInterface
             return $error_message;
         }
     }
+    
+    /**
+     * Set a user to active or inactive
+     * @param string five9 user name
+     * @param bool true for active, false for not active
+     *
+     * @return string success or error string
+     */
+    public function activeUser($user_name, $active)
+    {
+        $method = 'modifyUser';
+        # Get the users general info and set new active value
+        $users_general_info = $this->getUsersGeneralInfo($user_name);
+        $users_general_info['active'] = $active;
+        $user_modify = [
+            'userGeneralInfo' => $users_general_info
+        ];
+        
+        try {
+            $result = $this->client->$method($user_modify);
+            $response = 'success';
+            return $response;
+        } catch (\Exception $e) {
+            $error_message = $e->getMessage();
+            return $error_message;
+        }
+    }
 }
