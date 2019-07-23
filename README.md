@@ -1,5 +1,6 @@
 Five9 Client Library for PHP 
 =========================
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 Installation
 ------------
