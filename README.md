@@ -4,7 +4,7 @@ Five9 Client Library for PHP
 
 Installation
 ------------
-Coming Soon
+composer require bradstw/five9-client
 
 
 Features
@@ -20,6 +20,7 @@ Current Supported Methods
 * deleteUser
 * getUsersGeneralinfo
 * getAllUsersInfo
+* activeUser (de-activate or re-activate a user account)
 
 #### Groups
 * allAgentGroups
