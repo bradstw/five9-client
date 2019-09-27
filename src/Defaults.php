@@ -1,4 +1,5 @@
 <?php
+
 namespace Bradstw\Five9;
 
 /**
