@@ -5,7 +5,7 @@ Five9 Client Library for PHP
 Installation
 ------------
 composer require bradstw/five9-client:dev-master
-
+After Install, set desired defaults in the Defaults class scr/Defaults.
 
 Features
 --------
@@ -41,3 +41,7 @@ Current Supported Methods
 #### Lists
 * createList
 * deleteList
+
+#### Contacts
+* addRecordToList
+

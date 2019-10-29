@@ -1,6 +1,6 @@
 <?php
 
-class Five9UserTest extends PHPUnit_Framework_TestCase
+class Five9ContactsTest extends PHPUnit_Framework_TestCase
 {
 	
   /**
@@ -17,7 +17,7 @@ class Five9UserTest extends PHPUnit_Framework_TestCase
 		    'password' => "",
 		];
 		
-		$var = new Bradstw\Five9\Methods\User($credentials);
+		$var = new Bradstw\Five9\Methods\Contacts($credentials);
 	 	$this->assertTrue(is_object($var));
 	  	unset($var);
   	}
