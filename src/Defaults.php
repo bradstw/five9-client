@@ -30,7 +30,7 @@ class Defaults
     /** @var bool $failOnFieldParseError Whether to stop the import if incorrect data is found: */
     public static $failOnFieldParseError = true;
     /** @var string $reportEmail Notification about import results is sent by email. Best if injected somewhere */
-    public static $reportEmail = '';
+    public static $reportEmail = 'email@yourdomain.com';
     /** @var string $separator */
     public static $separator = ',';
     /** @var bool Whether to omit the top row that contains the names of the fields */

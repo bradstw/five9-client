@@ -52,7 +52,7 @@ class Contacts implements MethodInterface
         #TODO create options in function for diff settings to be passed
         $list_update_settings = [
             'fieldsMapping' => $columns,
-            'reportEmail' => 'dialer@silvertapllc.com',
+            'reportEmail' => Defaults::$reportEmail,
             'skipHeaderLine' => false,
             'crmAddMode' => 'ADD_NEW',
             'crmUpdateMode' => 'UPDATE_FIRST',
