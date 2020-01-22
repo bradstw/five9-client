@@ -35,4 +35,8 @@ class Defaults
     public static $separator = ',';
     /** @var bool Whether to omit the top row that contains the names of the fields */
     public static $skipHeaderLine = false;
+    
+    # BASIC DELETE SETTINGS
+    /** @var string Delete mode setting */
+    public static $listDeleteMode = 'DELETE_ALL';
 }
