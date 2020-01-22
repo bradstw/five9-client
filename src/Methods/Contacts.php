@@ -31,7 +31,7 @@ class Contacts implements MethodInterface
      * @param array (list name, array(record to be added))
      *
      * @return array (info on request, # updated, added or failed)
-     */
+    */
     public function addRecordToList($listName, $record)
     {
         $method = 'addRecordToList';
