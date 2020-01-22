@@ -44,4 +44,5 @@ Current Supported Methods
 
 #### Contacts
 * addRecordToList
+* deleteRecordFromList
 

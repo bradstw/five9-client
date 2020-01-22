@@ -31,7 +31,7 @@ class Contacts implements MethodInterface
      * @param array (list name, array(record to be added))
      *
      * @return array (info on request, # updated, added or failed)
-     */
+    */
     public function addRecordToList($listName, $record)
     {
         $method = 'addRecordToList';
@@ -42,9 +42,9 @@ class Contacts implements MethodInterface
         $data = [];
         foreach ($record as $field => $value) {
             $columns[] = [
-                "columnNumber" => $columnNumber++,
-                "fieldName"    => $field,
-                "key"          => ($field == 'number1' ? true : false),
+                'columnNumber' => $columnNumber++,
+                'fieldName'    => $field,
+                'key'          => ($field == 'number1' ? true : false),
             ];
             array_push($data, $value);
         }
@@ -63,6 +63,53 @@ class Contacts implements MethodInterface
         $xml_data = [
             'listName' => $listName,
             'listUpdateSettings' => $list_update_settings,
+            'record' => $data,
+        ];
+        
+        try {
+            $result = $this->client->$method($xml_data);
+            $vars = get_object_vars($result);
+            $response = get_object_vars($vars['return']);
+            return $response;
+        } catch (\Exception $e) {
+            $error_message = $e->getMessage();
+            return $error_message;
+        }
+    }
+    
+    /**
+     * Delete Record from a list
+     * @param array (list name, array(record to be added))
+     *
+     * @return array (info on request, deleted or failed)
+    */
+    public function deleteRecordFromList($listName, $record)
+    {
+        $method = 'deleteRecordFromList';
+        
+        # TODO create field mapping function to be used by these functions
+        # Build fields mapping
+        $columnNumber = 1;
+        $columns = [];
+        $data = [];
+        foreach ($record as $field => $value) {
+            $columns[] = [
+                'columnNumber' => $columnNumber++,
+                'fieldName'    => $field,
+                'key'          => ($field == 'number1' ? true : false),
+            ];
+            array_push($data, $value);
+        }
+        
+        $delete_mode = [
+            'listDeleteMode' => Defaults::$listDeleteMode,
+            'skipHeaderLine' => false,
+            'fieldsMapping' => $columns,
+        ];
+        
+        $xml_data = [
+            'listName' => $listName,
+            'listDeleteSettings' => $delete_mode,
             'record' => $data,
         ];
         
