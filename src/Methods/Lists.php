@@ -83,4 +83,26 @@ class Lists implements MethodInterface
             return $error_message;
         }
     }
+    
+    /**
+     * Add Phone Numbers to the DNC List
+     * @param string phone
+     *
+     * @return string success of error message
+     */
+    public function addNumberToDnc($numberToAdd)
+    {
+        $method = 'addNumbersToDnc';
+        $number = [
+            'numbers' => $numberToAdd,
+        ];
+        try {
+            $result = $this->client->$method($number);
+            $response = 'success';
+            return $response;
+        } catch (\Exception $e) {
+            $error_message = $e->getMessage();
+            return $error_message;
+        }
+    }
 }
