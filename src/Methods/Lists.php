@@ -105,4 +105,26 @@ class Lists implements MethodInterface
             return $error_message;
         }
     }
+    
+    /**
+     * Remove Phone Numbers from the DNC List
+     * @param string phone
+     *
+     * @return string success of error message
+     */
+    public function removeNumbersFromDnc($numberToRemove)
+    {
+        $method = 'removeNumbersFromDnc';
+        $number = [
+            'numbers' => $numberToRemove,
+        ];
+        try {
+            $result = $this->client->$method($number);
+            $response = 'success';
+            return $response;
+        } catch (\Exception $e) {
+            $error_message = $e->getMessage();
+            return $error_message;
+        }
+    }
 }
