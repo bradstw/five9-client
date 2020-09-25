@@ -41,6 +41,8 @@ Current Supported Methods
 #### Lists
 * createList
 * deleteList
+* addNumberToDnc
+* removeNumbersFromDnc
 
 #### Contacts
 * addRecordToList
