@@ -36,7 +36,7 @@ class Contacts implements MethodInterface
     {
         $method = 'addRecordToList';
         
-        # Build fields mapping and importdata objects
+        # Build fields mapping and import data objects
         $columnNumber = 1;
         $columns = [];
         $data = [];
@@ -51,19 +51,19 @@ class Contacts implements MethodInterface
         # Build object and send record to list
         #TODO create options in function for diff settings to be passed
         $list_update_settings = [
-            'fieldsMapping' => $columns,
-            'reportEmail' => Defaults::$reportEmail,
-            'skipHeaderLine' => false,
-            'crmAddMode' => 'ADD_NEW',
-            'crmUpdateMode' => 'UPDATE_FIRST',
-            'listAddMode' => 'ADD_FIRST',
-            'callNowMode' => 'ANY',
+            'fieldsMapping'         => $columns,
+            'reportEmail'           => Defaults::$reportEmail,
+            'skipHeaderLine'        => false,
+            'crmAddMode'            => 'ADD_NEW',
+            'crmUpdateMode'         => 'UPDATE_FIRST',
+            'listAddMode'           => 'ADD_FIRST',
+            'callNowMode'           => 'ANY',
             'cleanListBeforeUpdate' => false,
         ];
         $xml_data = [
-            'listName' => $listName,
+            'listName'           => $listName,
             'listUpdateSettings' => $list_update_settings,
-            'record' => $data,
+            'record'             => $data,
         ];
         
         try {
